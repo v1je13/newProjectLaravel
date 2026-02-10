@@ -6,16 +6,20 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public int $a = 4;
-    public int $b = 8;
-
-    public function show1()
+    public function showIndex()
     {
-        $a = $this->a;
-        $b = $this->b;
-        $mas=[
-            'potato1', 'poptato1', 'popotato1', 'papotota1', 'papatoto1'
-        ];
-        return view('second', compact('a','b','mas'));
+            return view('home');
+    }
+
+    public function showArray()
+    {
+        $array = [
+['id' => 1, 'title' => 'f40', 'price' => 500, 'path' => 'f40.jpg'],
+['id' => 2, 'title' => 'enzo', 'price' => 500, 'path' => 'ferrarienzo.jpg'],
+['id' => 3, 'title' => 'kr', 'price' => 500, 'path' => 'kr.jpg'],
+['id' => 4, 'title' => 'ph', 'price' => 500, 'path' => 'ph.jpg'],
+
+];
+    return view('array', compact('array'));
     }
 }
